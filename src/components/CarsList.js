@@ -1,9 +1,18 @@
 import { Cars } from "./Cars";
+import { useEffect, useState } from "react";
 
-export const CarsList = ({ initialCars }) => {
+export const CarsList = () => {
+  const [car, setCar] = useState([]);
+  useEffect(() => {
+    fetch("https://621dddd8849220b1fc879a8e.mockapi.io/cars", {
+      method: "GET",
+    })
+      .then((data) => data.json())
+      .then((values) => setCar(values));
+  }, []);
   return (
     <div className="cars-container">
-      {initialCars.map(
+      {car.map(
         (
           { vehicle_name, image, price, engine, fuel_type, driven_km, year },
           index

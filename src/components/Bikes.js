@@ -7,11 +7,11 @@ import { pink } from "@mui/material/colors";
 import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 import { useHistory } from "react-router-dom";
 
-export const Bikes = ({ initialBikes }) => {
+export const Bikes = ({ bikes }) => {
   const history = useHistory();
   return (
     <div className="cars-container">
-      {initialBikes.map(
+      {bikes.map(
         (
           { name, image, price, transmission, engine_cc, type, mileage },
           index

@@ -4,9 +4,11 @@ import { Navbar } from "./components/Navbar";
 import { Route, Switch } from "react-router-dom";
 import { Bikes } from "./components/Bikes";
 import { CarsList } from "./components/CarsList";
-import { AddYourvehicle } from "./components/AddYourvehicle";
+import { AddCar } from "./components/AddCar";
+import { AddBike } from "./components/AddBike";
 import { Order } from "./components/Order";
-import { Button } from "@mui/material";
+import { useState } from "react";
+import { Home } from "./components/Home";
 
 function App() {
   const initialCars = [
@@ -224,25 +226,30 @@ function App() {
       type: "Sport",
     },
   ];
-
+  const [cars, setCars] = useState(initialCars);
+  const [bikes, setBikes] = useState(initialBikes);
+  const [orders, setOrders] = useState([]);
   return (
     <div className="App">
       <Navbar />
       <Switch>
         <Route path={"/cars_your_root"}>
-          <CarsList initialCars={initialCars} />
+          <CarsList />
         </Route>
         <Route path={"/"} exact>
           <Home />
         </Route>
         <Route path={"/bikes_your_root"}>
-          <Bikes initialBikes={initialBikes} />
+          <Bikes bikes={bikes} />
         </Route>
-        <Route path={"/add_vehicle"}>
-          <AddYourvehicle />
+        <Route path={"/Sell_a_car"}>
+          <AddCar cars={cars} setCars={setCars} />
+        </Route>
+        <Route path={"/Sell_a_bike"}>
+          <AddBike bikes={bikes} setBikes={setBikes} />
         </Route>
         <Route path={"/order"}>
-          <Order />
+          <Order orders={orders} setOrders={setOrders} />
         </Route>
         <Route path={"/card"}></Route>
       </Switch>
@@ -251,30 +258,3 @@ function App() {
 }
 
 export default App;
-
-const Home = () => {
-  return (
-    <div>
-      <section className="home-section">
-        <div class="home-container">
-          <h2 className="home-title">BEST USED CARS IN CHENNAI</h2>
-          <h1 className="home1-title">Luxury Cars At Best Price</h1>
-          <p>For All Your Luxury & Exotic Automotive Needs</p>
-        </div>
-        <div className="home-more-button">
-          <Button className="more-button">See More</Button>
-        </div>
-      </section>
-      <section className="home-bike-section">
-        <div class="home-container">
-          <h2 className="home-title">BEST USED AND NEW BIKES IN CHENNAI</h2>
-          <h1 className="home2-title">Luxury & Used Bikes At Best Price</h1>
-          <p>For All Your Luxury & Exotic Automotive Needs</p>
-        </div>
-        <div className="home-more-button">
-          <Button className="more-button">See More</Button>
-        </div>
-      </section>
-    </div>
-  );
-};
