@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export const AddCar = ({ cars, setCars }) => {
+export const AddCar = () => {
   const history = useHistory();
   const [name, setName] = useState("");
   const [image, setImage] = useState("");

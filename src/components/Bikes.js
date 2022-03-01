@@ -6,8 +6,17 @@ import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import { pink } from "@mui/material/colors";
 import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 import { useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-export const Bikes = ({ bikes }) => {
+export const Bikes = () => {
+  const [bikes, setBikes] = useState([]);
+  useEffect(() => {
+    fetch("https://621dddd8849220b1fc879a8e.mockapi.io/bikes", {
+      method: "GET",
+    })
+      .then((data) => data.json())
+      .then((values) => setBikes(values));
+  }, []);
   const history = useHistory();
   return (
     <div className="cars-container">

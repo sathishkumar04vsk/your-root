@@ -9,7 +9,7 @@ export const Home = () => {
         <div className="home-container">
           <h2 className="home-title">BEST USED CARS IN CHENNAI</h2>
           <h1 className="home1-title">Luxury Cars At Best Price</h1>
-          <p>For All Your Luxury & Exotic Automotive Needs</p>
+          <p className="data">For All Your Luxury & Exotic Automotive Needs</p>
         </div>
         <div className="home-more-button">
           <Button
@@ -27,10 +27,10 @@ export const Home = () => {
         </div>
       </section>
       <section className="home-bike-section">
-        <div class="home-container">
+        <div className="home-container">
           <h2 className="home-title">BEST USED AND NEW BIKES IN CHENNAI</h2>
           <h1 className="home2-title">Luxury & Used Bikes At Best Price</h1>
-          <p>For All Your Luxury & Exotic Automotive Needs</p>
+          <p className="data">For All Your Luxury & Exotic Automotive Needs</p>
         </div>
         <div className="home-more-button">
           <Button
@@ -48,8 +48,10 @@ export const Home = () => {
         </div>
       </section>
       <section className="about-section">
-        <p>ABOUT OUR COMPANY</p>
-        <h3>For All Your Luxury Cars,Bikes & Automotive Needs.</h3>
+        <p className="about-company">ABOUT OUR COMPANY</p>
+        <h3 className="data ">
+          For All Your Luxury Cars,Bikes & Automotive Needs.
+        </h3>
         <p>
           A Luxury automotive company that provides high-end cars & services for
           resale. YourRoot is your premier source for all things automotive.
