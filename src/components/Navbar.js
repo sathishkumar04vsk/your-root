@@ -31,17 +31,17 @@ export const Navbar = () => {
           />
           <p className="yr">Y'R</p>
           <div className="nav-items">
-            <Button color="inherit" onClick={() => history.push("/")}>
+            <Button className="nav-btn" onClick={() => history.push("/")}>
               Home
             </Button>
             <Button
-              color="inherit"
+              className="nav-btn"
               onClick={() => history.push("/cars_your_root")}
             >
               Cars
             </Button>
             <Button
-              color="inherit"
+              className="nav-btn"
               onClick={() => history.push("/bikes_your_root")}
             >
               Bikes
